@@ -46,7 +46,7 @@ kind: Deployment
 metadata:
   name: web
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: web
@@ -104,7 +104,4 @@ spec:
 # MONGODB_PASSWORD => Senha do MongoDB
 #
 # O "nodePort: 3000" é a porta local do K3D, "port: 80" é do service web HTTP e "targetPort: 5000" é a porta do pod a porta de destino
-<<<<<<< HEAD
 ###
-=======
->>>>>>> a707645408f4bf2a9d21eb4664c609a56504221d
