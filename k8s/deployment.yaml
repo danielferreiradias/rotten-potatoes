@@ -46,7 +46,7 @@ kind: Deployment
 metadata:
   name: web
 spec:
-   replicas: 3
+  replicas: 3
   selector:
     matchLabels:
       app: web
@@ -57,7 +57,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: fabricioveronez/rotten-potatoes:v2
+        image: fabricioveronez/rotten-potatoes:v1
         ports:
         - containerPort: 5000
         env:
@@ -85,7 +85,7 @@ spec:
     - port: 80
       targetPort: 5000
       nodePort: 30000
-  type: NodePort
+  type: LoadBalancer
 
 
 
@@ -98,3 +98,5 @@ spec:
 # MONGODB_USERNAME => Usuário do MongoDB
 #
 # MONGODB_PASSWORD => Senha do MongoDB
+#
+# O "nodePort: 3000" é a porta local do K3D, "port: 80" é do service web HTTP e "targetPort: 5000" é a porta do pod a porta de destino
