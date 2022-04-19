@@ -1,3 +1,4 @@
+
 name: CI-CD
 
 on:
@@ -7,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  CI:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,3 +29,17 @@ jobs:
           tags: |
             nielbit/rotten-potatoes:latest
             nielbit/rotten-potatoes:${{ github.run_number }}
+            
+ CD:
+   runs-on: ubuntu-latest
+   
+   steps:
+     - uses: actions/checkout@v3
+     
+     - name: Kubernetes Set Context
+       uses: Azure/k8s-set-context@v2
+       with:
+         method: kubeconfig
+         kubeconfig: ${{ secrets.k8s_KUBECONFIG }}
+
+  
