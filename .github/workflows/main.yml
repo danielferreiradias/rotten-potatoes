@@ -28,4 +28,4 @@ jobs:
           push: true
           tags: |
             nielbit/rotten-potatoes:latest
-            nielbit/rotten-potatoes:{{ $github.run_number }}
+            nielbit/rotten-potatoes:${{ github.run_number }}    #vai inserir o número da execução da pipeline tendo o versionamento
