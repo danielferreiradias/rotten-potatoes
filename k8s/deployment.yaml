@@ -86,6 +86,10 @@ spec:
       targetPort: 5000
       nodePort: 30000
   type: LoadBalancer
+<<<<<<< HEAD
+=======
+
+>>>>>>> a707645408f4bf2a9d21eb4664c609a56504221d
 
 
 ###
@@ -100,4 +104,7 @@ spec:
 # MONGODB_PASSWORD => Senha do MongoDB
 #
 # O "nodePort: 3000" é a porta local do K3D, "port: 80" é do service web HTTP e "targetPort: 5000" é a porta do pod a porta de destino
+<<<<<<< HEAD
 ###
+=======
+>>>>>>> a707645408f4bf2a9d21eb4664c609a56504221d
